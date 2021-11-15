@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BootcampBlog
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'layouts/navbar'
+    .content
+      %p.notice= notice
+      %p.alert= alert
+      = yield
+      %div{:style => "background-image: url('https://image.freepik.com/free-vector/hand-draw-books-background-pattern_24640-8426.jpg');"}

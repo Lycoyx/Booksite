@@ -1,0 +1,13 @@
+%div.article-summary
+  %h2.header
+    =link_to article.title, article
+    %div.imagecss
+    -if article.image.present?
+      =image_tag(article.image, class: "article-summary-image" )
+  %div
+    %p.expression
+      =article.expression
+  %hr
+
+
+

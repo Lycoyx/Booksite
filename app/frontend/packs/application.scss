@@ -1,0 +1,22 @@
+// inside app/frontend/packs/application.scss
+
+// Just a quick ugly style to see if our CSS works
+h1 {
+  color: #273c75;
+}
+li{
+  list-style: none;
+
+}
+a{
+  text-decoration: none !important;
+}
+.content{
+  width: 45vw;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+// Import Bootstrap v5
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,40 @@
+
+%h1= @article.title
+-if current_user.present?
+  %div.buttons.float-end
+    =link_to "Edit", edit_article_path, class:'btn btn-outline-warning'
+    =link_to "Delete", article_path(@article), method: "delete",class:'btn btn-outline-danger', data:{ confirm: "Are you sure about that??"}
+
+
+
+-if @article.image.present?
+  =image_tag(@article.image, class:"article-image")
+%div.article-paragraph
+  %p=@article.body
+
+
+%br
+
+  %p=@article.likes.count.to_s + "Likes"
+  -if current_user.present?
+    -if @article.likes.where(user_id:current_user.id).present?
+      =link_to "Unlike", like_path(id:@article.id), class:'btn btn-outline-danger'
+    -else
+      =link_to "Like", like_path(id: @article.id), class:'btn btn-outline-success'
+
+  %br
+
+
+
+
+=link_to "Back", root_path
+=render "comments/comments"
+=render "comments/form"
+
+
+
+
+
+
+
+
